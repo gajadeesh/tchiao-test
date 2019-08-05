@@ -6,7 +6,7 @@ import "firebase/firestore"
 import "firebase/auth"
 //  import FireStore from "firebase/firebase-firestore"
 //  Initialize Firebase
-
+// console.log(process.env.VUE_APP_API_KEY)
 const config = {
   apiKey: process.env.VUE_APP_API_KEY,
   authDomain: process.env.VUE_APP_PRODUCT_ID + ".firebaseapp.com",
@@ -20,11 +20,11 @@ const FirebaseApp = Firebase.initializeApp(config);
 // const Firestorage = FirebaseApp.storage();
 // const Firestore = FirebaseApp.firestore();
 const FireAuth = FirebaseApp.auth();
- const settings = {timestampsInSnapshots: true};
+const settings = {timestampsInSnapshots: true};
 //   firestore.settings(settings);
 // const settings = Firestore.settings({
 //   timestampsInSnapshots: true
 // });
-
+export const firebaseApp = FirebaseApp;
 export const firebaseAuth = FireAuth;
-export const setting = settings;
+// export const setting = settings;

@@ -35,12 +35,13 @@
       </b-dropdown-item> -->
       <b-dropdown-divider />
       <!-- <b-dropdown-item><i class="fa fa-shield" /> Lock Account</b-dropdown-item> -->
-      <b-dropdown-item><i class="fa fa-lock" /> Logout</b-dropdown-item>
+      <b-dropdown-item @click="signOut"><i class="fa fa-lock" /> Logout</b-dropdown-item>
     </template>
   </AppHeaderDropdown>
 </template>
 
 <script>
+import {firebaseAuth} from '@/firebaseApp'
 import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
 export default {
   name: 'DefaultHeaderDropdownAccnt',
@@ -49,6 +50,15 @@ export default {
   },
   data: () => {
     return { itemsCount: 42 }
+  },
+  methods:{
+    signOut: function() {
+      firebaseAuth.signOut()
+        .then(() => {
+          this.$router.push("/login");
+        });
+    }
   }
+  
 }
 </script>

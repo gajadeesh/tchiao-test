@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import firebase from "firebase/app";
 
 //Project
 const ClientUser = () => import('@/components/clientUserComp.vue')
@@ -65,11 +66,19 @@ const User = () => import('@/views/users/User')
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   mode: 'history', // https://router.vuejs.org/api/#mode
-  linkActiveClass: 'open active',
-  scrollBehavior: () => ({ y: 0 }),
+  // linkActiveClass: 'open active',
+  // scrollBehavior: () => ({ y: 0 }),
   routes: [
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      meta: {
+        requiresGuest: true
+      }
+    },
     {
       path: '/',
       redirect: '/dashboard',
@@ -108,7 +117,8 @@ export default new Router({
           meta: {
             requiresAuth: true
           }
-        }
+        },
+        
       ]
     }]
   });
@@ -372,15 +382,42 @@ export default new Router({
   //   }
 //   ]
 // }
+//Nav Guard
 router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
-  const currentUser = firebase.auth().currentUser
-
-  if (requiresAuth && !currentUser) {
-      next('/login')
-  } else if (requiresAuth && currentUser) {
-      next()
+  //check for requiresAuth guard
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // check if NOT loggedin
+    if (!firebase.auth().currentUser) {
+      //Go to login
+      next({
+        path: "/login",
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      // Proceed to route
+      next();
+    }
+  } else if (to.matched.some(record => record.meta.requiresGuest)) {
+    // check if loggedin
+    if (firebase.auth().currentUser) {
+      //Go to login
+      next({
+        path: "/dashboard",
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      // Proceed to route
+      next();
+    }
   } else {
-      next()
+    // Proceed to route
+    next();
   }
-})
+});
+
+
+export default router;

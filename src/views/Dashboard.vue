@@ -372,7 +372,7 @@
             <b-col sm="12" lg="6">
               <!-- <b-card> -->
               <div class="chart-wrapper">
-                <bar-example chartId="chart-bar-01" height="250" />
+                <bar-example chartId="chart-bar-01" />
               </div>
               <!-- </b-card> -->
             </b-col>
