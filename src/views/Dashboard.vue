@@ -136,16 +136,14 @@
             <!-- <strong>29.703 Users (40%)</strong> -->
             <!-- <b-progress height={} class="progress-xs mt-2" :precision="1" variant="success" :value="40"></b-progress> -->
           </b-col>
-          <b-col class="mb-sm-2 mb-0 d-md-down-none">
+          <!-- <b-col class="mb-sm-2 mb-0 d-md-down-none">
             <b-row align-v="center">
               <div class="text-muted">
                 <strong>Active users</strong>
               </div>&nbsp;&nbsp;
               <div style="background-color:#6cc0e2;height:10px;width:10px;" class="text-center"></div>
             </b-row>
-            <!-- <strong>24.093 Users (20%)</strong>
-            <b-progress height={} class="progress-xs mt-2" :precision="1" variant="info" :value="20"></b-progress>-->
-          </b-col>
+          </b-col> -->
           <b-col class="mb-sm-2 mb-0">
             <b-row align-v="center">
               <div class="text-muted">
@@ -156,16 +154,14 @@
             <!-- <strong>78.706 Views (60%)</strong>
             <b-progress height={} class="progress-xs mt-2" :precision="1" variant="warning" :value="60"></b-progress>-->
           </b-col>
-          <b-col class="mb-sm-2 mb-0">
+          <!-- <b-col class="mb-sm-2 mb-0">
             <b-row align-v="center">
               <div class="text-muted">
                 <strong>App downtime</strong>
               </div>&nbsp;&nbsp;
               <div style="background-color:#74acff;height:10px;width:10px;" class="text-center"></div>
             </b-row>
-            <!-- <strong>22.123 Users (80%)</strong>
-            <b-progress height={} class="progress-xs mt-2" :precision="1" variant="danger" :value="80"></b-progress>-->
-          </b-col>
+          </b-col> -->
           <!-- <b-col class="mb-sm-2 mb-0 d-md-down-none">
             <div class="text-muted">Bounce Rate</div>
             <strong>Average Rate (40.15%)</strong>

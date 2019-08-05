@@ -8,7 +8,7 @@ module.exports = {
     : '/',
   devServer: {
     // setting host should not be necessary
-    host: '0.0.0.0:8080',
+    // host: '0.0.0.0:8080',
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 8080
