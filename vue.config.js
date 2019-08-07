@@ -11,7 +11,7 @@ module.exports = {
     // host: '0.0.0.0:8080',
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8080
+    port: 5000
     // public: 'tchiao.serveo.net',
     // disableHostCheck: true,
   },
