@@ -9,27 +9,27 @@ export default {
       //   text: 'NEW'
       // }
     },
-    {
-      name: 'User Management',
-      url: '/usermanagement',
-      icon: 'icon-people',
-      children: [
-        {
-          name: 'Client Users',
-          url: '/clientusers',
-          icon: 'icon-user',
-        },
-        // {
-        //   name: 'Office Users',
-        //   url: '/officeusers',
-        //   icon: 'icon-briefcase',
-        // },
-      ]
-      // badge: {
-      //   variant: 'primary',
-      //   text: 'NEW'
-      // }
-    },
+    // {
+    //   name: 'User Management',
+    //   url: '/usermanagement',
+    //   icon: 'icon-people',
+    //   children: [
+    //     {
+    //       name: 'Client Users',
+    //       url: '/clientusers',
+    //       icon: 'icon-user',
+    //     },
+    //     // {
+    //     //   name: 'Office Users',
+    //     //   url: '/officeusers',
+    //     //   icon: 'icon-briefcase',
+    //     // },
+    //   ]
+    //   // badge: {
+    //   //   variant: 'primary',
+    //   //   text: 'NEW'
+    //   // }
+    // },
     {
       name: 'Messages',
       url: '/messages',
